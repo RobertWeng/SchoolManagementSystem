@@ -1,0 +1,2 @@
+# SchoolManagementSystem
+ModeFair Technical Test
