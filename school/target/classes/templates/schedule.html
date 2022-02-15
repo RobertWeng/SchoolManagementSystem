@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Schedule</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <button onclick="location.href='/'" type="button">
+        Back</button>
+    <h1>Schedule</h1>
+    <br/><br/>
+    <table>
+        <thead>
+        <tr>
+            <th>Course</th>
+            <th>Semester</th>
+            <th>Year</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="schedule : ${scheduleList}">
+            <td th:text="${schedule.course().name}">Course</td>
+            <td th:text="${schedule.semester}">Semester</td>
+            <td th:text="${schedule.year}">Year</td>
+            <td>
+                <a th:href="@{/schedule/{id}/enroll (id=${schedule.id})}">Enroll</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{/schedule/{id}/view (id=${schedule.id})}">View</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

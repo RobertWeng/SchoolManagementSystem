@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Enroll</title>
+    <style>
+        table, th, td {
+            border: 1px black;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <button onclick="location.href='/schedule'" type="button">
+        Back</button>
+    <h1>Add New Student</h1>
+    <br />
+    <form action="#" th:action="@{/schedule/{id}/save (id=${scheduleID})}" th:object="${student}"
+          method="post">
+        <table>
+            <tr>
+                <td>Student Name:</td>
+                <td>
+                    <div class="form-group blu-margin">
+                        <select class="form-control" th:field="${student.id}"  id="dropOperator">
+                            <option value="0">Select Students</option>
+                            <option th:each="student : ${studentList}" th:value="${student.id}" th:text="${student.name}"></option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
