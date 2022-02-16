@@ -1,9 +1,9 @@
 # SchoolManagementSystem
 ModeFair Technical Test
 
-Login Crediential
-Account Username: admin
-Account password: modefair
+Login Crediential: 
+- Account Username: admin
+- Account password: modefair
 
 Instructions:
 1. run resources/script/schema.sql
